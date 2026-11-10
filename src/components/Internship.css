@@ -1,0 +1,119 @@
+.timeline {
+  position: relative;
+  padding-left: 48px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(var(--mint), var(--blue), transparent);
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 4px;
+  top: 34px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 5px rgba(0, 255, 163, 0.15), var(--glow-mint);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(0, 255, 163, 0.15), var(--glow-mint); }
+  50% { box-shadow: 0 0 0 10px rgba(0, 255, 163, 0.05), var(--glow-mint); }
+}
+
+.intern {
+  padding: 36px;
+}
+
+.intern__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.intern__head h3 {
+  font-size: 1.4rem;
+}
+
+.intern__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #7cb3ff;
+  font-size: 1.5rem;
+}
+
+.intern__org {
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+
+.intern__date {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--aqua);
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+.intern__summary {
+  margin: 22px 0 18px;
+}
+
+.intern__points {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.intern__points li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.intern__points svg {
+  color: var(--mint);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.intern__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+@media (max-width: 640px) {
+  .timeline { padding-left: 32px; }
+  .timeline::before { left: 6px; }
+  .timeline__dot { left: -2px; }
+  .intern { padding: 24px; }
+  .intern__date { margin-left: 0; }
+}
